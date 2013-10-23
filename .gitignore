@@ -18,3 +18,4 @@ js/vendor
 /vendor
 css/.sass-cache
 /js/vendor/bootstrap
+npm-debug.log

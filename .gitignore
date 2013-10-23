@@ -17,3 +17,4 @@ vendor/bin
 js/vendor
 /vendor
 css/.sass-cache
+/js/vendor/bootstrap

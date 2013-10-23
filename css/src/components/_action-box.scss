@@ -1,0 +1,164 @@
+// action box styles. Expected markup:
+/* <div class="row-fluid">
+    <div class="span12">
+        <div class="action-box action-box-1">
+            <a href="#">
+                <h2>Action box heading</h2>
+                <p>For multichannel retailers who want to increase mobile revenues and get an ROI in less than 100 days when adapting their website for mobile devices.</p>
+                <span class="fake-link">View Now</span>
+            </a>
+        </div>
+    </div>
+    <div class="span12">
+        <div class="action-box action-box-2">
+            <a href="#">
+                <h2>Action box heading</h2>
+                <p>For multichannel retailers who want to increase mobile revenues and get an ROI in less than 100 days when adapting their website for mobile devices.</p>
+                <span class="fake-link">View Now</span>
+            </a>
+        </div>
+    </div>
+</div> */
+
+@include breakup-block("basic") {
+    .action-box {
+        border: 1px solid #ccc;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        &.action-box-2 {
+            a {
+                border-color: $cityBlue;
+            }
+        }
+        &.action-box-3 {
+            a {
+                border-color: $cityGreen;
+            }
+        }
+        &.action-box-4 {
+            a {
+                border-color: $cityOrange;
+            }
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        a {
+            color: #333;
+            display: block;
+            border-bottom: none;
+            border-left: 10px solid $red1;
+            padding: 20px;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+            -webkit-transform: translateX(-5px);
+            -moz-transform: translateX(-5px);
+            transform: translateX(-5px);
+
+            &:hover, &:focus {
+                -webkit-transform: translateX(0px);
+                -moz-transform: translateX(0px);
+                transform: translateX(0px);
+                background: #f9f9f9;
+            }
+
+            &:active {
+                background: #fff;
+            }
+
+        }
+
+        .fake-link {
+            color: $red;
+            border-bottom: 1px solid #ccc;
+
+            &:hover {
+                border-bottom-color: #fff;
+            }
+        }
+    }
+
+
+    //DEPRECATED ACTION BOX
+    /* ***************************** actionbox ****************************************** */
+    .actionbox {
+        height: 110px;
+        padding: 5px 10px 30px 10px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background-color: rgba(233,231,228,1);
+        border-radius: 5px;
+        position: relative;
+
+        .left {
+            float: left;
+            height: auto;
+            /* padding-bottom: 20px; */
+
+            .copy {
+                height: auto;
+
+                h2 {
+                    font-size: 20px;
+                    line-height: 20px;
+                    margin:5px 0px 0px 0px;
+                    padding: 0px 0px 15px 0px;
+                }
+
+            }
+
+            .button {
+
+                a {
+                    color: #000000;
+                }
+
+                i {
+                    margin: 3px 0 0 3px;
+                }
+
+            }
+
+        }
+
+        .right {
+            float: right;
+            padding: 2% 2% 0 0;
+        }
+
+
+
+        h2{
+            margin:0px;
+        }
+    }
+
+
+    .actionbox2 {
+        width: 480px;
+        min-height: 110px;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background: #e9e7e4;
+        display:block;
+        position:relative;
+
+        .b-left{
+            position:absolute;
+            top:0px;
+            left:5px;
+        }
+
+        .b-right{
+            right:10px;
+            bottom:0px;
+            position:absolute;
+        }
+
+    }
+}

@@ -1,0 +1,48 @@
+@include breakup-block("basic") {
+    #courses-widget {
+
+        .ui-accordion-header a {
+            border: medium none;
+            padding: 10px;
+        }
+
+        .widget-content  {
+            padding: 0px;
+
+            h3 {
+                font-size: 0.9em;
+
+                a {
+                    text-decoration: none;
+                    background-color: #E7E7E7;
+                }
+            }
+
+            h3:last-child {
+                border-bottom: none;
+            }
+
+            li.course {
+                background: none repeat scroll 0 0 #FFFFFF;
+                padding: 5px;
+
+                h4 {
+                    font-family: Arial,Helvetica,sans-serif;
+                    font-size: 0.9em;
+                    margin: 0px;
+
+                    a {
+                        font-weight: bold;
+                    }
+
+                }
+            }
+
+        }
+
+        .ui-accordion-content {
+            padding: 0 1px;
+        }
+
+    }
+}

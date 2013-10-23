@@ -1,0 +1,14 @@
+@include breakup-block("basic") {
+    #map-widget {
+        .map-parameters {
+            display: none;
+        }
+        img {
+            margin: 0;
+        }
+
+        .vcard {
+            margin: 0 5px;
+        }
+    }
+}

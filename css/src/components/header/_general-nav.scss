@@ -1,0 +1,80 @@
+// Students, Alumni, Staff, City University London navigation
+@include breakup-block("basic") {
+
+    #general-nav {
+        float: right;
+        background-color: #333;
+        border-radius: 0 0 6px 6px;
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        font-size: .9em;
+
+        a {
+            display: block;
+            border-bottom: none;
+            background: none repeat scroll 0 0 #B32E27;
+            color: #FFFFFF;
+            padding: 5px 0;
+
+            &:hover,
+            &:focus {
+                background:$logoRed;
+                color:white;
+                text-decoration: underline;
+            }
+            &:active {
+
+            }
+            span {
+                border-left: 1px solid #fff;
+                padding: 0 6px;
+            }
+        }
+
+        li {
+            float: left;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2em;
+            background: transparent;
+
+            &:last-child {
+                border-left: 1px solid #fff;
+                a {
+                    border-radius: 0 0 6px 0;
+                }
+            }
+            &:first-child {
+                a {
+                    border-radius: 0 0 0 6px;
+                }
+                span {
+                    border: none;
+                }
+            }
+
+        }
+    } // #general-nav
+
+    #cityuni {
+        a {
+            background: #333;
+
+            &:hover {
+                background: #444;
+            }
+
+            span {
+                border: none;
+            }
+
+        }
+    }
+}
+
+@include breakup-breakpoint("thinish") {
+    #general-nav a span {
+        padding: 0 8px;
+    }
+}

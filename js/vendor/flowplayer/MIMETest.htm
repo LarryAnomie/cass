@@ -1,0 +1,43 @@
+<HTML>
+<head>
+<meta name="Keywords" content="Flash, MIME, Flash Central">
+<meta http-equiv="Keywords" content="Flash, MIME, Flash Central">
+<meta name="description" content="Flash Central's MIME Test Page">
+<meta name="Author" content="John Croteau">
+<title>Flash MIME Test</title>
+</head>
+<BODY TEXT="#FF0000" BGCOLOR="#000000" LINK="#FF9933" VLINK="#CC9900" ALINK="#000D00" BACKGROUND="/Graphics/Space1.jpg">
+
+<CENTER>
+<FONT SIZE=3>
+If you have the Flash2 plug-in (or later) and get a puzzle piece icon below using Netscape Navigator 2.0 or above then the Flash Vector Graphic MIME has not been set correctly on the server yet.<BR>
+<FONT COLOR="00FF00">
+MIME Type: application/x-shockwave-flash &nbsp;&nbsp;&nbsp;&nbsp;Suffix: .swf<BR>
+</FONT>
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+      codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=2,0,0,11"
+      width=300 height=80> 
+     <PARAM name="Movie" value="MSIE.swf"> 
+     <EMBED src="TestMIME.swf" width=300 height=80
+      PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"> 
+     </OBJECT>
+<HR>
+<FONT COLOR="00FF00">
+This version has  type="application/x-shockwave-flash" included<BR>
+It may or may not display Flash without the MIME being set.<BR></FONT>
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+      codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=2,0,0,11"
+      width=300 height=80>
+     <PARAM name="Movie" value="MSIE.swf"> 
+     <EMBED src="TestMIME.swf" width=300 height=80 type="application/x-shockwave-flash"
+      PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"> 
+
+     </OBJECT>
+</FONT>
+<FONT COLOR="#FF9933">
+<BR>For More information on MIME see Server Setup at 
+<A HREF="http://www.FlashCentral.com/tech/"> Flash Central</A>.
+</FONT>
+</CENTER>
+
+</BODY></HTML>

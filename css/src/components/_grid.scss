@@ -1,0 +1,41 @@
+//@include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
+@include breakup-block("basic") {
+
+    body {
+        padding: 0 10px;
+    }
+    .container {
+        width: auto;
+        overflow: visible;
+    }
+    [class*="span"],
+    .row-fluid [class*="span"] {
+        float: none;
+        display: block;
+        width: auto;
+        margin-left: 0px;
+    }
+    .responsive-wrapper {
+        padding-top: 20px;
+    }
+}
+
+@include breakup-breakpoint("medium") {
+    @include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
+}
+
+@include breakup-breakpoint("wide") {
+    body {
+        padding: 0;
+    }
+    #container {
+        width: 980px;
+    }
+}
+
+@include breakup-breakpoint("wider") {
+
+    #container {
+        width: 1200px;
+    }
+}

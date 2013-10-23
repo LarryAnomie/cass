@@ -1,0 +1,68 @@
+@media only screen and (min-width: 1035px){
+   body {
+        //background-color: yellow;
+    }
+
+
+    #container {
+        width: 1035px;
+    }
+
+    .children {
+        position: absolute;
+    }
+
+/*     #global-nav  {
+
+        padding-top: 0px;
+        display: block !important;
+
+        li {
+            float: left;
+            width: auto !important;
+
+                a {
+                    background-color: rgba(223,220,215,1) !important;
+                }
+
+            ul {
+                visibility: hidden;
+            }
+
+        }
+    } */
+
+
+
+    #header {
+    }
+
+    #search-form {
+        //width: 354px;
+        //height: 37px;
+        left: -1px;
+    }
+
+    #search {
+        //top: 4px;
+    }
+
+    #general-nav,
+    #general-nav-block {
+/*         display: block;
+        float: left;
+        position: relative;
+        top: 0px; */
+    }
+
+
+
+    .global-nav-active {
+        width: 150px;
+        padding: 10 15px;
+    }
+
+    .global-nav-position {
+        padding-top: 0px;
+    }
+}

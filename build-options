@@ -1,0 +1,17 @@
+# which unix server to sync files to
+static_host = msm1an0.city.ac.uk
+
+# a prefix dir to prepend
+prefix_dir = cassrmain
+
+# which build jobs to do
+do_jobs = js images css
+
+# while we debug, don't actually sync, flip commented
+# line to enable/disable
+#dry_run = --dry-run
+dry_run =
+
+# to update externals (e.g. bootstrap in /vendor)
+# should rarely need this - commented by default
+#update_externals = yes

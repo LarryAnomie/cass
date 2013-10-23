@@ -1,0 +1,10 @@
+    // free text widgets
+@include breakup-block("basic") {
+    .free-text{
+        .widget-content {
+            padding: 10px;
+        }
+    }
+}
+
+

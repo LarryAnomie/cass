@@ -1,0 +1,128 @@
+/**
+* footer new
+*/
+@include breakup-block("basic") {
+    #footer {
+        background-image: image_url("bg-footer.png");
+        background-repeat: no-repeat;
+        background-position: 98% 95%;
+        background-color: #333;
+        @include border-radius(0 0 20px 0);
+        clear: both;
+        color: #ccc;
+        margin: 1.5em 0;
+        padding: 0.5em;
+        position: relative;
+        font-size: $baseFontSize - 2;
+
+        address {
+            display: block;
+            font-style: normal;
+            line-height: 20px;
+            margin: 10px 0 0 0;
+            color: #CCCCCC;
+
+            &:first-line {
+                font-weight: bold;
+                color: rgb(255,255,255);
+            }
+
+        }
+
+        #footer-contact-us {
+            display: block;
+            padding-bottom: 15px;
+            padding-left: 0;
+            margin-left: -5px;
+
+            i {
+                display: inline-block;
+                width: 1.25em;
+                text-align: center;
+            }
+        }
+
+        div,
+        nav {
+            display: block;
+            vertical-align: top;
+        }
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        a {
+            color: #CCCCCC;
+            border-bottom: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .images-links {
+
+            a {
+                background: none repeat scroll 0 0 transparent;
+            }
+
+            li {
+                background: none repeat scroll 0 0 transparent;
+                float: left;
+                padding: 0 0.2em;
+            }
+
+            img {
+                padding: 0 5px;
+            }
+
+             span {
+                float: left;
+                line-height: 13px;
+                margin-right: 20px;
+                text-align: right;
+            }
+
+            .contact {
+
+                nav {
+                    position: absolute;
+                    top: -10px;
+                }
+            }
+        }
+
+        .images-links ul:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+    }
+}
+
+@include breakup-breakpoint("thinish") {
+     #footer {
+        .contact,
+        .footer-links {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+
+@include breakup-breakpoint("medium") {
+    #footer {
+        .contact,
+        .footer-links,
+        .images-links {
+            width: 33%;
+            float: left;
+        }
+    }
+
+}

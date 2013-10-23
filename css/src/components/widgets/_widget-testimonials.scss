@@ -1,0 +1,21 @@
+@include breakup-block("basic") {
+    #testimonials-widget {
+        ul {
+            overflow: hidden;
+        }
+        .widget-content {
+            i {
+                display: none;
+            }
+        }
+        blockquote {
+            background: transparent;
+            padding-left: 30px;
+            margin-top: 0;
+
+            &::before {
+                left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+#social-widget .widget-content {
+    padding: 10px;
+}
+
+/*list of social media channels with icons*/
+#social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0 0 10px 0;
+    }
+    a {
+        padding: 0 0 0 42px;
+        background: transparent image_url("vector-social-media-icons/social-list.png") no-repeat 0 0;
+        display: block;
+        line-height: 32px;
+        height: 32px;
+        border-bottom: none;
+    }
+    a span {
+        border-bottom: 1px solid #ccc;
+    }
+    a:hover span {
+        border-bottom: none;
+    }
+    a:focus span {
+        background:#B02A1A; }
+    a:hover {
+        text-decoration: none;
+    }
+    .twitter {
+        background-position: 0 -52px;
+    }
+    .google {
+        background-position: 0 -104px;
+     }
+    .youtube {
+        background-position: 0 -156px;
+     }
+    .linkedin {
+        background-position: 0 -208px;
+    }
+    .pinterest {
+        background-position: 0 -260px;
+    }
+}

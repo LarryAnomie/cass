@@ -1,0 +1,23 @@
+@include breakup-block("basic") {
+    #header {
+        @include legacy-pie-clearfix;
+        z-index: 101;
+        position: relative;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .icon-reorder:before {
+        content: "";
+        margin-right: 4px
+    }
+}
+
+@include breakup-breakpoint("wide") {
+    #header {
+        margin: 0;
+
+        .site-home {
+            margin-top: 48px;
+        }
+    }
+}

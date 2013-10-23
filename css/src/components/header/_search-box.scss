@@ -1,0 +1,116 @@
+/* search ======================================*/
+@include breakup-block("basic") {
+    #search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        margin: 0;
+        height: 38px;
+        overflow: hidden;
+        background: #eae9e7;
+
+        p {
+            overflow: hidden;
+            float: right;
+            margin: 0;
+            border: 1px solid #ccc;
+        }
+        label {
+            color: #fff;
+            margin: 0 10px 0 0;
+            padding: 0;
+            font-weight: bold;
+            line-height: 1em;
+            display: none;
+        }
+    }
+
+    #query {
+        height: 35px;
+        background: #f7f7f7;
+        padding: 0 4px;
+        border: none;
+        float: left;
+        display: inline;
+        margin: 0;
+        font-size: 1em;
+        color: #333;
+        width: 150px;
+        -webkit-border-radius:0;
+        position: relative;
+        z-index: 100000;
+    }
+
+    #s-button {
+        border: none;
+        background-color: $grey1;
+        cursor: pointer;
+        height: 35px;
+        width: 36px;
+        i {
+            color: $linkColor;
+        }
+    }
+
+    #search-icon {
+        background: #fff;
+        height: 38px;
+        width: 26px;
+        display: inline;
+        float: left;
+        color: $red;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+            line-height: 0;
+        i {
+
+        }
+    }
+}
+
+@include breakup-breakpoint("thin") {
+    #search-form {
+        width: 100%;
+        position: absolute;
+        height: 52px;
+    }
+}
+
+@include breakup-breakpoint("wide") {
+    #s-button {
+        height: 24px;
+        width: 36px;
+        font-size: .9em;
+
+        i {
+            font-size: 1.1em;
+            line-height: 1em;
+        }
+    }
+    #search {
+        position: relative;
+        padding: 5px;
+        margin: 0;
+        height: 26px;
+    }
+    #query {
+        height: 24px;
+        width: 263px;
+    }
+
+    #search-icon {
+        height: 38px;
+        width: 26px;
+    }
+}
+
+@include breakup-breakpoint("wider") {
+
+    #search-form {
+        position: relative;
+        width: 518px;
+        height: 37px;
+    }
+}

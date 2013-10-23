@@ -1,0 +1,281 @@
+
+    // ===========================================================
+    // Carousel
+
+@include breakup-block("basic") {
+
+
+    .js .bxslider,
+    .js .bx-controls {
+        display: block;
+    }
+
+    .bx-wrapper,
+    .no-js .bxslider {
+        position: relative;
+        padding: 0;
+        *zoom: 1;
+    }
+
+    #promo-wrapper {
+        clear: both;
+        margin-top: 20px;
+        @include gradient-vertical(#333, #000);
+        @include clearfix;
+        border-radius: 20px 0 20px 0;
+        border-color: transparent;
+
+        .bx-viewport {
+
+            position: absolute;
+            z-index: 3;
+        }
+
+        .bx-viewport {
+
+        }
+
+        // .bx-controls contains all carousel controls
+        .bx-controls {
+            font-weight: bold;
+            background-color: transparent;
+            z-index: 5;
+            @include clearfix;
+
+            a {
+                border-bottom: none;
+            }
+
+            .bx-prev {
+                left: 0px;
+                margin-right: 1px;
+            }
+
+            .bx-next {
+                right: 0px;
+            }
+        }
+
+        // pager (numbers)
+        .bx-pager {
+            float: left;
+            color: #fff;
+            @include clearfix;
+
+            &.bx-default-pager a {
+                background: $gray;
+                display: block;
+                outline: 0;
+                color: white;
+                padding: 6px 10px;
+                margin: 0 1px 0 0;
+                font-weight: bold;
+
+                &:hover,
+                &.active {
+                    background: #b02a1a;
+                }
+            }
+        }
+
+        .bx-pager-item,
+        .bx-controls-auto-item {
+            display: inline-block;
+            float: left;
+        }
+
+        // next / prev buttons
+        .bx-controls-direction {
+            float: left;
+
+            a {
+                outline: 0;
+                z-index: 1;
+                padding: 1px 11px 1px 10px;
+                position: absolute;
+                top: 38%;
+                background-color: #333;
+                display: none;
+                color: #fff;
+                font-size: 2.2em;
+                float: left;
+                text-align: center;
+
+                &:hover {
+                    background-color: $linkColor;
+                }
+            }
+        }
+
+        // start / stop buttons
+        .bx-controls-auto {
+            float: left;
+
+            a {
+                padding: 6px 10px;
+                display: block;
+                background-color: $grey6;
+
+                i {
+                    color: #fff;
+                }
+            }
+
+            .bx-start {
+                margin-left: 10px;
+                margin-right: 1px;
+            }
+
+            .bx-stop:hover,
+            .bx-stop.active {
+                background-color: $linkColor;
+            }
+
+            .bx-start:hover,
+            .bx-start.active {
+                background-color: $linkColor;
+            }
+
+        }
+
+        .bx-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #666;
+            background: rgba(80, 80, 80, 0.75);
+            width: 100%;
+        }
+
+        .bx-caption span {
+            color: #fff;
+            font-family: Arial;
+            display: block;
+            font-size: .85em;
+            padding: 10px;
+            top: 18px;
+        }
+    } // #promo-wrapper
+
+    .carousel-text {
+        padding: 20px;
+        background-color: transparent;
+        color: #fff;
+        font-size: $BaseFontSizeSmaller;
+
+        .date {
+            margin-top: 5px;
+            font-size: 0.9em;
+            width: 58px;
+            margin-right: 20px;
+
+            .date-day-no {
+                font-size: 1.6em;
+            }
+            .date-day {
+                color: #333;
+            }
+        }
+        h2 {
+            color: #fff;
+            font-size: $fontSizeLarge;
+            line-height: $baseLineHeight;
+        }
+        .cta {
+            margin-bottom: 0;
+        }
+    }
+
+    .carousel-media {
+
+        float: right;
+
+        img {
+            padding: 0;
+            margin: 0;
+            // no image on small screens
+            display: none;
+        }
+
+        a {
+            border: none;
+            background-color: transparent;
+        }
+
+        display: block;
+    }
+
+    // the ul containing slides
+    #promo-area {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        // each slide
+        li {
+            position: relative;
+            list-style: none;
+            @include clearfix;
+            display: none;
+
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+
+    // js is enabled if we are here
+    .bx-viewport #promo-area {
+        li {
+            display: block;
+        }
+    }
+
+    .js #promo-area.loading {
+        background: image_url("ajax-loader-small-red-on-grey.gif") no-repeat center center transparent;
+    }
+
+} //end basic
+
+@include breakup-breakpoint("thin") {
+
+}
+
+@include breakup-breakpoint("wide") {
+    #promo-wrapper {
+        border-radius: 45px 0 48px 0;
+
+        .bx-controls {
+            font-weight: bold;
+            background-color: transparent;
+            bottom: 10px;
+            left: 10px;
+            position: absolute;
+        }
+        h2 {
+            margin: 0 0 2.04% 0;
+        }
+    }
+    #promo-area {
+        li {
+        }
+    }
+    .carousel-text {
+        width: 39%;
+        padding: 40px 15px 0 40px;
+        font-size: 1em;
+
+        h2 {
+            font-size: $baseFontSize * 2.25;
+            line-height: $baseLineHeight * 2;
+        }
+    }
+    .carousel-media {
+        img {
+            display: block;
+        }
+    }
+}
+@include breakup-breakpoint("wide") {
+
+}

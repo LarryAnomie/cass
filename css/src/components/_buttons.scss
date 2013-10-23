@@ -1,0 +1,128 @@
+@include breakup-block("basic") {
+    .cta {
+        display: inline-block;
+
+        a {
+            text-align: center;
+            margin: 0 auto;
+            display: inline-block;
+            padding: 5px 10px;
+            color: #fff;
+            border-radius: 4px;
+            font-weight: bold;
+
+            i {
+                float: right;
+                background-color: transparent;
+                vertical-align: middle;
+                line-height: 1.5em;
+                color: #fff;
+            }
+
+            &:focus {
+                text-decoration: underline;
+
+                i {
+                    text-decoration: none;
+                }
+            }
+            &:active {
+                @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .5));
+            }
+        }
+
+        &.display-block {
+            display: block;
+
+            a {
+                display: block;
+            }
+        }
+    }
+
+    // new call to action buttons
+    .soft-cta {
+        a {
+            @include gradient-vertical(#f5f5f5, #f1f1f1);
+            color: #444;
+            border: 1px solid #dcdcdc;
+            border: 1px solid rgba(0,0,0,0.1);
+            font-weight: bold;
+
+            i {
+                color: #444;
+            }
+
+            &:hover {
+              border: 1px solid #c6c6c6;
+            }
+
+            &:active {
+                @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+            }
+
+            &:focus {
+                border: 1px solid #4d90fe;
+            }
+        }
+    }
+
+    .mid-cta {
+        a {
+            background-color: $cityBlueLight;
+            border: 1px solid $cityBlueLight;
+
+            &:hover {
+                border: 1px solid $cityBlue;
+            }
+        }
+    }
+
+    .hard-cta {
+        a {
+            @include gradient-vertical($red1, $red3);
+            border: 1px solid $red3;
+
+            &:hover {
+              border: 1px solid $red4;
+            }
+
+
+        }
+    }
+
+    // social cta buttons, e.g. "follow us on Twitter"
+
+    .twitter-cta {
+        a {
+            border: 1px solid $twitterBlue;
+            border-radius: 4px;
+            background: #00aced;
+            color: #fff;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+
+            &:hover {
+              background: lighten($twitterBlue, 10%);
+            }
+        }
+    }
+
+    .facebook-cta {
+        a {
+            border: 1px solid $facebookBlue;
+            border-radius: 4px;
+            background:$facebookBlue;
+            color: #fff;
+
+            transition-property: background-color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+
+            &:hover {
+                background: lighten($facebookBlue, 10%);
+            }
+        }
+    }
+}

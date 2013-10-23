@@ -1,0 +1,10 @@
+*~
+*#
+var*
+^.#
+.svn*
+tmp*
+*number-master.svg
+.git*
+vendor*
+.jshintrc

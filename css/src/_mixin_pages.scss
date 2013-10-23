@@ -1,0 +1,143 @@
+//mixin makes gradient with with built in colours in rgba format
+
+@mixin linearGradientLeftRight(){
+    background: rgb(176, 42, 26); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(176, 42, 26, 1) 0%, rgba(176, 42, 26, 1) 40%, rgba(204,102,102,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(176, 42, 26, 1)), color-stop(40%,rgba(176, 42, 26, 1)), color-stop(100%,rgba(204,102,102,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(176, 42, 26, 1) 0%,rgba(176, 42, 26, 1) 40%,rgba(204,102,102,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(176, 42, 26, 1) 0%,rgba(176, 42, 26, 1) 40%,rgba(204,102,102,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(176, 42, 26, 1) 0%,rgba(176, 42, 26, 1) 40%,rgba(204,102,102,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(176, 42, 26, 1) 0%,rgba(176, 42, 26, 1) 40%,rgba(204,102,102,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
+}
+
+
+//mixin makes gradient with colours NOT! in rgba format
+
+@mixin linearGradientLeftRightVarColour($startCol,$endCol){
+    background: $startCol ; /* Old browsers */
+    background: -moz-linear-gradient(top, $startCol 0%, $startCol 40%, $endCol 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startCol), color-stop(40%,$startCol), color-stop(100%,$endCol)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $startCol 0%,$startCol 40%,$endCol 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $startCol 0%,$startCol 40%,$endCol 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $startCol 0%,$startCol 40%,$endCol 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $startCol 0%,$startCol 40%,$endCol 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startCol', endColorstr='$endCol',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin borderColors(){
+    $val:none !default;
+    border-bottom-color: $val;
+    border-left-color: $val;
+    border-right-color: $val;
+    border-top-color: $val;
+}
+
+@mixin gradientBackgroundMenu($col11,$col12,$col12){
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NjY2NjYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI5JSIgc3RvcC1jb2xvcj0iI2NjY2NjYyIgc3RvcC1vcGFjaXR5PSIwLjY1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iI2NhYzljOSIgc3RvcC1vcGFjaXR5PSIwLjQ1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjNGJlYmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(204,204,204,1) 0%, rgba(204,204,204,0.65) 29%, rgba(202,201,201,0.45) 45%, rgba(196,190,190,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,1)), color-stop(29%,rgba(204,204,204,0.65)), color-stop(45%,rgba(202,201,201,0.45)), color-stop(100%,rgba(196,190,190,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(204,204,204,0.65) 29%,rgba(202,201,201,0.45) 45%,rgba(196,190,190,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(204,204,204,0.65) 29%,rgba(202,201,201,0.45) 45%,rgba(196,190,190,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(204,204,204,0.65) 29%,rgba(202,201,201,0.45) 45%,rgba(196,190,190,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(204,204,204,1) 0%,rgba(204,204,204,0.65) 29%,rgba(202,201,201,0.45) 45%,rgba(196,190,190,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#c4bebe',GradientType=0 ); /* IE6-8 */
+}
+
+.btn {
+    display: inline-block;
+    @include ie7-inline-block();
+    padding: 5px 10px;
+    margin-bottom: 0; // For input.btn
+    font-size: $baseFontSize;
+    line-height: $baseLineActionBox;
+    *line-height: $baseLineHeight;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    @include buttonBackground($btnBackgroundMaroon, $btnBackgroundMaroonHighlight, $grayDark, 0 1px 1px rgba(255,255,255,.75));
+    border: 1px solid $btnBorder;
+    *border: 0; // Remove the border to prevent IE7's black border on input:focus
+    border-bottom-color: darken($btnBorder, 10%);
+    border: 1px solid rgb(137, 35, 30);
+    @include border-radius($baseBorderRadius);
+    @include ie7-restore-left-whitespace(); // Give IE7 some love
+    @include box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
+
+    // Hover state
+    &:hover {
+    color: $grayDark;
+    text-decoration: none;
+    background-color: darken($white, 10%);
+    *background-color: darken($white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
+    border: 1px solid darken($maroonBttn, 10%);
+    //background-position: 0 -15px;
+
+    // transition is only when going to hover, otherwise the background
+    // behind the gradient (there for IE<=9 fallback) gets mismatched
+    @include transition(background-position .1s linear);
+    }
+}
+
+
+$breakup-breakpoints: (
+    "thin" "(min-width: 320px)",
+    "thinish" "(min-width: 480px)",
+    "medium" "(min-width: 767px)",
+    "wide" "(min-width: 980px)",
+    "wider" "(min-width: 1200px)"
+);
+
+@mixin nav-link-styles {
+    &:visited {
+        color: $red1;
+    }
+    &:focus,
+    &:hover {
+        color: $logoRed;
+        text-decoration: underline;
+        //background-color: #fff;
+        text-decoration: underline;
+        border-color: #ccc;
+    }
+    &:active {
+        text-decoration: none;
+    }
+}
+
+@mixin clear-arrow {
+    &:after,
+    &:before {
+        content: none;
+    }
+}
+
+@mixin arrow {
+    &:after,
+    &:before {
+        top: -1px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #fff;
+        border-width: 10px;
+        left: 5%;
+        margin-left: -10px;
+    }
+
+    &:before {
+        border-color: rgba(204, 204, 204, 0);
+        border-top-color: #cccccc;
+        border-width: 11px;
+        left: 5%;
+        margin-left: -11px;
+    }
+}

@@ -1,0 +1,20 @@
+// Where are these styles applied??? can they be removed?
+
+@include breakup-block("basic") {
+    #content .block {
+        .video-content {
+
+            .video {
+                float: left;
+                margin-right: 20px;
+                width: 218px;
+            }
+
+            .content {
+                float: left;
+                width: 259px;
+            }
+        }
+    }
+}
+

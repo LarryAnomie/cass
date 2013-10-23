@@ -1,0 +1,58 @@
+//flickr widget
+#flickr-widget {
+
+    .widget-content  {
+        padding: 0;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    li {
+        background: $white;
+        margin: 0 5px 1px 5px;
+        padding: 0;
+    }
+    .imageurl {
+        display: none;
+    }
+
+    li > a,
+    li > a img {
+        display: block;
+        margin: 0 auto;
+        border: 2px solid $white;
+        background-color: transparent;
+        float: none;
+    }
+
+    $img-meta-x-padding: 10px;
+    $img-meta-y-padding: 10px;
+
+    .image-meta {
+        min-height: 50px;
+        padding: $img-meta-x-padding $img-meta-y-padding $img-meta-x-padding $img-meta-y-padding + 60px;
+        margin: 0;
+        background: $white no-repeat $img-meta-y-padding $img-meta-x-padding;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: none;
+        @include opacity(0.95);
+    }
+
+    li {
+        position: relative;
+
+        &:hover {
+            z-index: 99;
+
+            .image-meta {
+                display:block;
+            }
+        }
+    }
+}

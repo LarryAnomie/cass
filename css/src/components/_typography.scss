@@ -1,0 +1,319 @@
+// Body reset
+// -------------------------
+
+body {
+  margin: 0;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $textColor;
+  background-color: $bodyBackground;
+}
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 14px 0;
+    font-family: $headingsFontFamily;
+    font-weight: $headingsFontWeight;
+    line-height: $baseLineHeight;
+    color: $headingsColor;
+    text-rendering: optimizelegibility; // Fix the character spacing for headings
+
+    small {
+        font-weight: normal;
+        line-height: 1;
+        color: $grayLight;
+    }
+}
+
+h1,
+h2,
+h3 { line-height: $baseLineHeight * 2; }
+
+h1 { font-size: $baseFontSize * 2.75; } // ~38px
+h2 { font-size: $baseFontSize * 2.25; } // ~32px
+h3 { font-size: $baseFontSize * 1.75; } // ~24px
+h4 { font-size: $baseFontSize * 1.25; } // ~18px
+h5 { font-size: $baseFontSize; }
+h6 { font-size: $baseFontSize * 0.85; } // ~12px
+
+h1 small { font-size: $baseFontSize * 1.75; } // ~24px
+h2 small { font-size: $baseFontSize * 1.25; } // ~18px
+h3 small { font-size: $baseFontSize; }
+h4 small { font-size: $baseFontSize; }
+
+
+
+/*stop editors messing with headings*/
+h1 a, h1 a:link,
+h2 a, h2 a:link,
+h3 a, h3 a:link,
+h4 a, h4 a:link,
+h5 a, h5 a:link,
+h6 a, h6 a:link,
+h1 strong,
+h2 strong,
+h3 strong {
+    font-weight: normal;
+    border-bottom: none;
+    text-decoration: none;
+}
+
+small {
+  font-size: 85%; // Ex: 14px base font * 85% = about 12px
+}
+
+/*allow editors using the EES to make bold anchors*/
+strong,
+strong a {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+cite {
+  font-style: normal;
+}
+
+p {
+    overflow: hidden;
+    margin: 0 0 14px;
+}
+
+hr {
+    color:$grey2;
+    height:1px;
+    border:none;
+    border-top:1px solid $grey2;
+    margin: $baseLineHeight 0;
+}
+
+//===================================================
+// Lists
+
+ul ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul li,
+ol li {
+    padding: 0;
+    line-height: $baseLineHeight;
+}
+ol li {
+    list-style: decimal;
+}
+ol ul li {
+    list-style: circle;
+}
+ul ul {
+    margin-bottom: 0;
+    list-style: circle;
+}
+ol ol {
+    margin-bottom: 0;
+}
+
+dl {
+    margin-bottom: $baseLineHeight;
+}
+dt {
+    padding: 5px;
+    background: $grey1;
+    margin-bottom: 10px;
+    font-family: $serifFontFamily;
+    font-size: 1.2em;
+    line-height: $baseLineHeight;
+    font-weight: bold;
+}
+dd {
+    margin: 0 0 14px 10px;
+    line-height: $baseLineHeight;
+}
+
+acronym, abbr, dfn {
+    border-bottom: 1px $grey6 dotted;
+    cursor: help;
+}
+
+blockquote {
+    font-family: $serifFontFamily;
+    font-style: italic;
+    font-size: 1.1em;
+    line-height: 1.4em;
+    color: $grey5;
+    margin: 20px 0 20px 0;
+    padding: 20px 20px 20px 50px;
+    clear: both;
+    border: none;
+    position: relative;
+    background: #f7f7f7;
+
+    &::before {
+        content : "\f10d";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1.5em;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+        display: block;
+        width: auto;
+        height: auto;
+        line-height: normal;
+        vertical-align: baseline;
+        background-image: none;
+        background-position: 0% 0%;
+        background-repeat: repeat;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    p {
+        margin-bottom: 0;
+        @include font-shorthand(16px,300,$baseLineHeight * 1.25);
+    }
+    small {
+        display: block;
+        line-height: $baseLineHeight;
+        color: $grayLight;
+        &:before {
+            content: '\2014 \00A0';
+        }
+    }
+
+    // Float right with text-align: right
+    &.pull-right {
+        float: right;
+        padding-right: 15px;
+        padding-left: 0;
+        border-right: 5px solid $grayLighter;
+        border-left: 0;
+
+        p,
+        small {
+            text-align: right;
+        }
+        small {
+            &:before {
+                content: '';
+            }
+            &:after {
+                content: '\00A0 \2014';
+            }
+        }
+    }
+}
+
+address {
+    display: block;
+    margin-bottom: $baseLineHeight;
+    font-style: normal;
+    line-height: $baseLineHeight;
+}
+
+.standfirst {
+    @include font-serif(1.2em, normal, 1.4em);
+    margin: 0 0 10px 0;
+    font-style: italic;
+    color: $grey5;
+}
+
+
+//Images
+
+img.right {
+    margin: 0 0 0 10px;
+    float: right;
+}
+img.left {
+    margin: 0 10px 0 0;
+    float: left;
+}
+img.no-border {
+    border: none;
+}
+a img {
+    border: none;
+}
+
+object,
+img {
+    margin: 0 0 14px 0;
+    max-width: 100%;
+}
+
+.pub-date {
+    margin: 0;
+    font-style: italic;
+}
+#content.testimonials {
+    padding: 0 0 20px 0;
+}
+
+#content.image-gallery {
+    padding: 0 0 20px 0;
+    width: 780px;
+    margin: 0;
+}
+
+.js #content .youtube,
+.js #content .fms {
+    display: none;
+}
+
+// =================================================================
+// the below comes from grdi - can it be removed?
+
+
+img {
+    border: none;
+
+    .center{
+        margin: 0 auto;
+        display:block;
+    }
+}
+
+
+
+.image-right {
+    float: right;
+    margin: 0 10px 10px 10px;
+}
+
+
+
+
+    img {
+            .aligned-left{
+            padding-right:10px;
+            float:left;
+        }
+    }
+
+
+
+/* .js #promo-area #slide-2,
+.js #promo-area #slide-3,
+.js #promo-area #slide-4,
+.js #promo-area #slide-5,
+.js #promo-area #slide-6,
+.js #promo-area #slide-7,
+.js #promo-area #slide-8,
+.js #promo-area #slide-9,
+.js #promo-area #slide-10 {
+    display: none;
+}
+.js #promo-area #slide-1 {
+    display: block;
+}
+
+ */
+
+

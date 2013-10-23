@@ -1,0 +1,306 @@
+@import "compass/css3/box-shadow";
+
+@include breakup-block("basic") {
+
+    #global-nav-wrapper {
+        background: #eae9e7;
+
+        // in this scope for specificty reasons
+        .global-nav-bttn {
+            color: #333;
+            position: relative;
+            background: #e0dcd7;
+            border-bottom: none;
+            display: block;
+            float: left;
+            font-weight: bold;
+            height: 38px;
+            line-height: 38px;
+            margin: 5px;
+            padding: 0 0 0 10px;
+            @include border-radius(6px);
+
+            .text {
+                padding-right: 10px;
+            }
+
+            &.active {
+                background: #fff;
+                @include single-box-shadow(#ffffff, 0, 5px, 0, 0);
+                @include border-radius(6px 6px 0 0);
+            }
+        }
+    }
+
+    // all device sizes styles for #global nav
+
+    .js #global-nav {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    #global-nav {
+        list-style-type: none;
+        list-style-position: outside;
+        margin: 0;
+        padding: 0;
+        @include clearfix;
+        font-size: .9em;
+        float: left;
+        clear: left;
+        width: 100%;
+        font-weight: bold;
+
+        li {
+            margin: 0;
+            padding: 0;
+            border-right: 1px solid white;
+            list-style:none;
+
+            a {
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+                margin: 0;
+                text-decoration: none;
+                display: block;
+                color: #333;
+                background: #fff;
+
+                i {
+                    color: #ccc;
+                    display: none;
+                }
+
+                &:hover,
+                &:focus {
+                    background: #f7f7f7;
+
+                    i {
+                        text-decoration: none;
+                        color: #333;
+                    }
+                }
+                &:active {
+
+                }
+                &:visited {
+                    color: #333333;
+                }
+
+                &.ui-accordion-header-active {
+                    background: #fff;
+                }
+
+            }
+
+            .children {
+
+                li {
+                    a {
+                        border-radius: 0;
+                        border-bottom: 1px solid #f1f1f1;
+                        padding-left: 25px;
+                    }
+
+                }
+            }
+
+            .ui-accordion-content {
+                padding: 0em;
+                margin-bottom: 1px;
+
+            }
+
+            .ui-accordion-content-active {
+                border: 0;
+            }
+
+
+        }
+        >li:first-child a {
+            //border-radius: 0 0 0 0px;
+
+            &:hover {
+                border-radius: 0;
+            }
+        }
+    } // #global-nav
+}
+
+@include breakup-breakpoint("thin") {
+    #global-nav {
+        li {
+            .children {
+
+                li a {
+
+                }
+
+                li:first-child {
+                    border-top: 1px solid #CCCCCC;
+                }
+
+                li:last-child {
+                    border-bottom: 1px solid #CCCCCC;
+                }
+            }
+        }
+    }
+}
+@include breakup-breakpoint("thinish") {
+
+}
+@include breakup-breakpoint("medium") {
+
+}
+@include breakup-breakpoint("wide") {
+
+    #global-nav-wrapper {
+        background: transparent;
+
+        .global-nav-bttn {
+            display: none;
+        }
+    }
+
+    .global-nav-bttn {
+        display: none;
+    }
+
+    .js #global-nav {
+        display: block;
+    }
+
+    #global-nav {
+        float: left;
+        width: auto;
+        margin: 0;
+
+        li {
+            float: left;
+            border-right: 1px solid white;
+            list-style:none;
+            background: #eae9e7;
+
+            &:hover {
+                background: #b32e27;
+
+                a {
+                    color: #fff;
+                }
+                i {
+                    color: #fff;
+                }
+                .children {
+                    a {
+                        color: #333;
+                    }
+                }
+            }
+
+            a {
+                padding: 8px 8px 8px 10px;
+                border-bottom: none;
+                text-decoration: none;
+                display: block;
+                color: #333;
+                background: transparent;
+
+                i {
+                    color: #c3bfba;
+                    display: inline-block;
+                }
+                &:visited {
+                    //color: #333;
+                }
+                &:hover,
+                &:focus {
+                    background: #b32e27;
+                    text-decoration: underline;
+                    color: #fff;
+
+                    i {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+                &:active {
+
+                }
+
+            }
+
+            &:hover {
+                .children {
+                    left: auto;
+                    top: auto;
+                }
+            }
+
+            ul {
+                display: block;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            &:first-child {
+                border-radius: 0 0 0 6px;
+
+                &:hover {
+                    border-radius: 0;
+                }
+
+            }
+            .children {
+                margin: 0;
+                padding: 0;
+                z-index: 100;
+                overflow: hidden;
+                position: absolute;
+                left: -999em;
+                float: left;
+                box-shadow: 0 8px 6px -6px rgba(0,0,0,0.6);
+
+                li:first-child {
+                    border-top: 1px solid #e0dcd7;
+                }
+
+                li {
+                    display: block;
+                    float: none;
+                    padding: 0px;       /*   overwrite  padding from parent selector   */
+                    border-radius: 0px; /*   overwrite  border-radius from parent selector   */
+                    border-bottom: 1px solid #fff;
+                    border-right: none; /*   overwrite border-right from parent selector   */
+
+                    a {
+                        border-radius: 0px; /*   overwrite  border-radius from parent selector   */
+                        padding: 7px 15px;
+                        background: #e0dcd7;
+                        width: 170px;
+                        text-align: left;
+                        border-bottom: none;
+
+                        &:hover {
+                            background-color: #b32e27;
+                            color: #fff;
+                        }
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                }
+            }
+        } // li
+    } // #global-nav
+
+}
+
+@include breakup-breakpoint("wider") {
+
+}

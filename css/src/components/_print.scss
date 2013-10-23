@@ -1,0 +1,119 @@
+@media print {
+
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    //CITY print styles
+    @import "blueprint";
+
+    body {
+        @include blueprint-print(true);
+    }
+
+    #header a {
+        text-decoration: none;
+    }
+
+    #content a {
+        @include blueprint-show-link-urls;
+    }
+
+    .hidden, #global-nav, #search, #login-opener, #login_form_login_prompt,
+    #site-home, #primary-nav, #primary-breadcrumb, #breadcrumb, #secondary-nav,
+    #sidebar, #footer, #courses-form, #news-form, #events-form, #filter, .ui-tabs-nav,
+    .date, .sign-up, #promo-wrapper, .noprint,
+    #cross-domain, #mast-1, #util-nav, #primary-nav-toggler, #slice-navigation, #global-nav-toggler {
+        display:none;
+    }
+
+    #header #logo a, #header #logo a span {
+        display: none!important;
+    }
+    #header #global-nav-1 {
+            display: none!important;
+    }
+    .ui-accordion-content {
+        display: block !important;
+    }
+
+    img.left {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    img.right {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        clear: left;
+    }
+    h2, h3, h4, h5, h6 {
+        clear: both;
+    }
+}

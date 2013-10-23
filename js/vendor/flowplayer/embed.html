@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> 
+        <script type="text/javascript" src="http://releases.flowplayer.org/js/flowplayer-3.2.9.min.js"></script>
+
+
+        <!-- page title -->
+        <title>Flowplayer</title>
+
+        <script type="text/javascript">
+            $(function() {
+                var query = location.search.slice(1),
+                params = {},
+                vid;
+                $.each(query.split('&'), function(i, str) {
+                    str = str.split('=');
+                    params[str[0]] = str[1];
+                });
+                vid = params['v'];
+                if ('undefined' === typeof vid) {
+                    return;
+                }
+                $f("a.rtmp", "http://releases.flowplayer.org/swf/flowplayer-3.2.10.swf", {
+                    
+                    clip: {
+                        provider: 'rtmp'
+                    },
+                    
+                    playlist: [
+                        {url: '//s1.city.ac.uk/i/flowplayer-city.jpg' , autoPlay: true},
+                        {url: vid + '/Hi_bandwidth', autoPlay: false, scaling: 'fit'}                    
+                    ],
+                    
+                    plugins: {
+                        rtmp: {
+ 
+                            // use latest RTMP plugin release
+                            url: 'http://releases.flowplayer.org/swf/flowplayer.rtmp-3.2.9.swf',
+                            netConnectionUrl: 'rtmp://media.city.ac.uk/flowplayer',
+                            objectEncoding: '0',
+                            proxyType: 'none'
+                        }
+                    }/**,
+
+                    controls: {
+                        url: 'flowplayer.controls.swf'
+                    } */
+                });
+            });
+        </script>
+        <style type="text/css">
+            a, body {
+                width: 100%;
+                height:100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+    </head>
+    <body><a class="rtmp"></a></body>
+</html>

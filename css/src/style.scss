@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*!
+ * CassR v0.0
+ *
+ * Copyright 2012 City University London
+ *
+ * Designed and built by the City University London Web Team
+ */
+
+
+// Core variables and mixins
+@import "variables"; // Modify this for custom colors, font-sizes, etc;
+@import "mixins";
+@import "mixin_pages";
+
+// Compass utilities
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+@import "compass/utilities";
+
+
+// see https://github.com/BPScott/breakup for documentation
+@import "breakup";
+$breakup-included-blocks: ("basic" "thin" "thinish" "medium" "wide" "wider");
+
+// ======================================================
+// Bootstrap base CSS (Vendor folder)
+
+@import "imports";
